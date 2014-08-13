@@ -29,7 +29,7 @@ Install:
 Install Vundle, then run bundle install command:
 
 ~~~vim
-Plugin 'sgur/vim-quickflake8'
+Plugin 'sgur/vim-f8'
 ~~~
 
 License:
