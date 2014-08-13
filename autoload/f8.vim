@@ -1,13 +1,18 @@
 scriptencoding utf-8
 
-function! f8#run()
+let s:save_cpo = &cpo
+set cpo&vim
+
+
+
+function! f8#run(path)
   let current_compiler = get(b:, 'current_compiler', '')
   compiler flake8
 
   call s:update_buffer()
 
   try
-    execute 'silent make --exit-zero' expand('%:.')
+    execute 'silent make' s:options() fnamemodify(a:path, ':.')
     call s:set_quickfix_visibility()
   finally
     if !empty('current_compiler')
@@ -34,3 +39,26 @@ function! s:update_buffer()
     update
   endif
 endfunction
+
+
+function! s:options()
+  let _ = []
+  if !empty(g:f8_builtins)
+    call add(_, '--builtins=' . join(g:f8_builtins, ','))
+  endif
+  if !empty(g:f8_ignore)
+    call add(_, '--ignore=' . join(g:f8_ignore, ','))
+  endif
+  if !empty(g:f8_max_line_length)
+    call add(_, '--max-line-length=' . g:f8_max_line_length)
+  endif
+  if !empty(g:f8_max_complexity)
+    call add(_, '--max-complexity=' . g:f8_max_complexity)
+  endif
+  return join(_, ' ')
+endfunction
+
+
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
