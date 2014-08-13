@@ -37,7 +37,7 @@ Requirements:
 -------------
 
 - vim (supposed 7.4 or after)
-- flake8
+- [flake8](https://pypi.python.org/pypi/flake8)
 
 Install:
 --------
