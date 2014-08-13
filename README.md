@@ -1,18 +1,18 @@
-vim-flake8
+vim-f8
 ===============
 
-`vim-flake8` is a Vim plugin that checks the buffer with flake8 when saved.
+`vim-f8` is a Vim plugin that checks the buffer with flake8 when saved.
 
 [Flake8](http://pypi.python.org/pypi/flake8/) is a wrapper around PyFlakes
 (static syntax checker), PEP8 (style checker) and Ned's MacCabe script
 (complexity checker).
 
-This plugin also provide flake8 compilr.
+This plugin also provide flake8 compiler script.
 
 Usage:
 ------
 
-### On update buffers
+### On updating buffers
 
 1. open \*.py
 2. `:write` or `:update` the buffer
