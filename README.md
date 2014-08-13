@@ -12,7 +12,13 @@ This plugin also provide flake8 compilr.
 Usage:
 ------
 
-### Validate current buffer with flake8 using `:make`
+### On update buffers
+
+1. open \*.py
+2. `:write` or `:update` the buffer
+3. Open quickfix list if any errors exist
+
+### Using `:make`
 
 ~~~vim
 :update
@@ -20,8 +26,18 @@ Usage:
 :make [flake8 options] %
 ~~~
 
+### Mannualy invoking ':Flake8' command
+
+
+~~~vim
+:Flake8 {buffer name}
+~~~
+
 Requirements:
 -------------
+
+- vim (supposed 7.4 or after)
+- flake8
 
 Install:
 --------
