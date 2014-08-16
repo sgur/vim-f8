@@ -12,7 +12,7 @@ Usage:
 
 ### On updating buffers
 
-1. open \*.py
+1. Open \*.py
 2. `:write` or `:update` the buffer
 3. Open quickfix list if any errors exist
 
